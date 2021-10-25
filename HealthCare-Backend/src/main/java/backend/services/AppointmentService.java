@@ -30,8 +30,11 @@ public class AppointmentService {
 		return appointmentRepository.findById(appointmentId).get();
 	}
 
-	public Appointment getAppointmentByPatientId(String patientid) {
-		return appointmentRepository.findByPatientId(patientid);
+	public List<Appointment> getAppointmentByPatientId(String patientid) {
+		System.out.println("patient id is " + patientid);
+		List<Appointment> ls =  appointmentRepository.findByPatientId(patientid);
+		System.out.println(ls);
+		return ls;
 	}
 
 }

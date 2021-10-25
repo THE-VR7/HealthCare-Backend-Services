@@ -23,12 +23,6 @@ public class PatientController {
 	@Autowired
 	private PatientService patientService;
 
-//	<dependency>
-//	<groupId>org.springframework.security</groupId>
-//	<artifactId>spring-security-test</artifactId>
-//	<scope>test</scope>
-//</dependency>
-
 	@SuppressWarnings("unchecked")
 	@PostMapping("patients/register")
 	public ResponseEntity<JSONObject> registerPatient(@RequestBody Patient patient) {

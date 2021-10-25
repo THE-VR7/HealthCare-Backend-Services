@@ -15,7 +15,7 @@ public class Appointment {
 
 	@Id
 	@GeneratedValue(generator = "system-uuid")
-	@GenericGenerator(name = "system-uuid", strategy = "uuid")
+	@GenericGenerator(name = "system-uuid", strategy = "uuid2")
 	private String booking_id;
 	private String disease;
 
@@ -39,7 +39,6 @@ public class Appointment {
 
 	public Appointment() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public String getBooking_id() {

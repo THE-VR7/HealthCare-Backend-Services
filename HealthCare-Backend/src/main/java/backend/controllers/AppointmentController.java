@@ -6,12 +6,7 @@ import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import backend.models.Appointment;
 import backend.services.AppointmentService;
@@ -23,6 +18,7 @@ public class AppointmentController {
 	@Autowired
 	private AppointmentService service;
 
+	@SuppressWarnings("unchecked")
 	@PostMapping("appointment/register")
 	public ResponseEntity<JSONObject> registerAppointment(@RequestBody Appointment appointment) {
 		JSONObject obj = new JSONObject();
@@ -47,7 +43,7 @@ public class AppointmentController {
 	}
 
 	@GetMapping("appointment/list/{patientid}")
-	public Appointment getAppointmentByPatientId(@PathVariable String patientid) {
+	public List<Appointment> getAppointmentByPatientId(@PathVariable String patientid) {
 		return service.getAppointmentByPatientId(patientid);
 	}
 
