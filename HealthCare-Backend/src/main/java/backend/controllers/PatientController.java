@@ -37,7 +37,7 @@ public class PatientController {
 		}
 	}
 
-	@GetMapping("patients/list/")
+	@GetMapping("patients/list")
 	public List<Patient> getPatients() {
 		return patientService.getPatients();
 	}

@@ -82,6 +82,14 @@ public class ApplicationUser {
 		this.password = password;
 	}
 
+	@Override
+	public String toString() {
+		return "ApplicationUser [userid=" + userid + ", user_name=" + user_name + ", user_email=" + user_email
+				+ ", password=" + password + ", user_mobile=" + user_mobile + ", location=" + location + "]";
+	}
+	
+	
+
 	// public Date user_dob;
 
 }
